@@ -1,4 +1,4 @@
-package com.lfp.zt.sbweb.dao;
+package com.lfp.zt.sbweb.service;
 
 import com.lfp.zt.sbweb.model.User;
 
@@ -8,19 +8,17 @@ import java.util.List;
  * Project: zt-springboot
  * Title:
  * Description:
- * Date: 2018/5/11
+ * Date: 2018/5/14
  * Copyright: Copyright (c) 2018
  * Company: qudian
  *
  * @author ZhuTao
  * @version 2.0
  */
-public interface UserDao {
+public interface UserService {
 
-    int insert(User user);
+    int addUser(User user);
 
-    //User get(Integer id);
-
-    List<User> selectUsers();
+    List<User> findAllUser(int pageNum, int pageSize);
 
 }

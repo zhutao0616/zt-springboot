@@ -1,13 +1,12 @@
 server:
   port: 8080
 
-
 spring:
     datasource:
         name: test
-        url: jdbc:mysql://127.0.0.1:3306/mytest?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        url: jdbc:mysql://127.0.0.1:3306/zt_test?useUnicode=true&useSSL=false&characterEncoding=UTF-8&allowMultiQueries=true
         username: root
-        password: root
+        password: zhutao0616
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
@@ -28,9 +27,16 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.winterchen.model
+  type-aliases-package: ccom.lfp.zt.sbweb.model
 
-mapper:
-  mappers:  com.winterchen.dao
-  not-empty: false
-  identity: MYSQL
+#mapper:
+#  mappers:  ccom.lfp.zt.sbweb.dao
+#  not-empty: false
+#  identity: MYSQL
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
